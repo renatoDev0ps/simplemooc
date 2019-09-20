@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'accounts',
     'courses',
 ]
 
@@ -127,3 +128,20 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# E-mails
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'Renato Nascimento <dev.infordigi@gmail.com>'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'dev.infordigi@gmail.com'
+EMAIL_HOST_PASSWORD = '@Helohim33'
+EMAIL_PORT = 587
+
+CONTACT_EMAIL = 'infordigirn@gmail.com'
+
+# Auth
+LOGIN_URL = '/accounts/login'
+LOGIN_REDIRECT_URL = '/core/home'
+LOGOUT_URL = '/accounts/logout'

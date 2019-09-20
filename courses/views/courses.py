@@ -19,6 +19,7 @@ def details(request, slug):
       name = form_contact.cleaned_data["name"]
       email = form_contact.cleaned_data["email"]
       message = form_contact.cleaned_data["message"]
+      form_contact.send_mail(course)
       return redirect('courses')
   else:
     form_contact = ContactCourse()
